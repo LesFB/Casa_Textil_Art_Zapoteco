@@ -131,3 +131,46 @@ floatForm.addEventListener("submit", (e) => {
         window.location.href = "./search.html";
     };
 });
+
+function iconoBolsa(){
+    let carrito= JSON.parse(localStorage.getItem("CartShopping"));
+    var carritoActivo = document.getElementById("active-car");
+    var carritoInactivo = document.getElementById("inactive-car");
+
+    if (carrito === null || carrito.length === 0){
+
+        carritoActivo.style.display = "none"; // Ocultar el icono activo
+        carritoInactivo.style.display = "inline"; 
+    }else{
+  
+        carritoActivo.style.display = "inline"; // Mostrar el icono activo
+        carritoInactivo.style.display = "none";
+    }    
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    iconoBolsa();
+  });
+
+function iconoBolsaAnadir(){
+    var carritoActivo=document.getElementById("active-car");
+    var carritoInactivo=document.getElementById("inactive-car");
+
+    carritoActivo.style.display = "inline"; // Mostrar el icono activo
+    carritoInactivo.style.display = "none";
+}
+
+function iconoBolsaEliminar(){
+    let carrito= JSON.parse(localStorage.getItem("CartShopping"));
+    var carritoActivo=document.getElementById("active-car");
+    var carritoInactivo=document.getElementById("inactive-car");
+
+    if (carrito.length<2){
+        
+        carritoActivo.style.display = "none"; // Ocultar el icono activo
+        carritoInactivo.style.display = "inline"; 
+        location.reload();
+    }
+    
+    
+}

@@ -103,7 +103,7 @@ function addMyBagContent580() {
               <div> $${objeto.precio} MXN</div>
             </div>
             <div id="crossButton" class="col-auto">
-              <button id="cross-icon-button580${indice}" class = "cross-icon-buttons" type="button">
+              <button onclick="iconoBolsaEliminar()" id="cross-icon-button580${indice}" class = "cross-icon-buttons" type="button">
                 <i id="cross-icon" class="fi fi-sr-cross"></i>
               </button>
             </div>
@@ -376,7 +376,19 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 })
 
+function actualizarIconoBolsa(){
+  let carrito1= JSON.parse(localStorage.getItem("CartShopping"));
+    var carritoActivo = document.getElementById("active-car");
+    var carritoInactivo = document.getElementById("inactive-car");
 
+    if (carrito1.length==0){
+        carritoActivo.classList.add("d-none");
+        carritoInactivo.classList.remove("d-none");
+    }else{
+        carritoActivo.classList.remove("d-none");
+        carritoInactivo.classList.add("d-none");
+    }   
+}
 
 
 
