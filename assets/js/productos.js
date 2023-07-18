@@ -29,8 +29,6 @@ bton.addEventListener("click", (e) => {
 
 /*Fin de elementos de bton filtro en contenedor de productos*/
 
-
-
 //se trae los datos del html
 
 const divProductos = document.querySelector("#contenedor");
@@ -146,7 +144,7 @@ function addProducto(filtro,arregloProductos) {
             
                                                      <div class="container-fluid " id="button_content_modal">
                                                     
-                                                     <button  id="addCart${indice}" class = "addCartButtons"> Añadir al carrito</button>
+                                                     <button  onclick="iconoBolsaAnadir()" id="addCart${indice}" class = "addCartButtons"> Añadir al carrito</button>
                                             
                                            
                                                 

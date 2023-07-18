@@ -235,39 +235,105 @@ document.addEventListener("DOMContentLoaded", () => {
 //Termina lo referente a pintar el catalogo de prodcutos del html
 
 
+//Termina lo referente a pintar el catalogo de prodcutos del html
+
+const catalogoMasVendidos = [{
+  id: "prod-coj-01",
+  producto: "Funda para cojin",
+  categoria: "cojines",
+  precio: 250,
+  color: "Azul",
+  tamaño: "50x50 cm",
+  material: "Algodon",
+  composicion: "100% natural",
+  consecutivo: 1,
+  img: "./assets/img/productos/prod-coj-01.jpg",
+},
+{
+  id: "prod-coj-02",
+  producto: "Funda para cojin",
+  categoria: "cojines",
+  precio: 300,
+  color: "rosa",
+  tamaño: "50x50 cm",
+  material: "Algodon orgánico",
+  composicion: "100% natural",
+  consecutivo: 2,
+  img: "./assets/img/productos/prod-coj-02.jpg",
+},
+{
+  id: "prod-coj-03",
+  producto: "Funda para cojin",
+  categoria: "cojines",
+  precio: 350,
+  color: "Gris",
+  tamaño: "50x50 cm",
+  material: "Algodon",
+  composicion: "100% natural",
+  consecutivo: 1,
+  img: "./assets/img/productos/prod-coj-03.jpg",
+},
+{
+  id: "prod-coj-05",
+  producto: "Funda para cojin",
+  categoria: "cojines",
+  precio: 250,
+  color: "Blanco",
+  tamaño: "50x50 cm",
+  material: "Algodon",
+  composicion: "100% natural",
+  consecutivo: 1,
+  img: "./assets/img/productos/prod-coj-05.jpg",
+},
+{
+  id: "prod-coj-06",
+  producto: "Funda para cojin",
+  categoria: "cojines",
+  precio: 250,
+  color: "Negro",
+  tamaño: "50x50 cm",
+  material: "Algodon",
+  composicion: "100% natural",
+  consecutivo: 1,
+  img: "./assets/img/productos/prod-coj-06.jpg",
+},
+{
+  id: "prod-coj-08",
+  producto: "Funda para cojin",
+  categoria: "cojines",
+  precio: 450,
+  color: "Gris",
+  tamaño: "50x50 cm",
+  material: "Algodon orgánico",
+  composicion: "100% natural",
+  consecutivo: 1,
+  img: "./assets/img/productos/prod-coj-08.jpg",
+}];
+
 //Inicia lo referente a pintar el carousel del html
 
-const divCarousel = document.querySelector("#productosCarousel");
+const divCarousel = document.getElementById("productosCarousel");
 
 function addProductoCarousel() {
-//conexion a la promesa que retorna las espuestas del json
-    productosjson.then(array => {
-//filtro para seleccionar olo 5 productos del arreglo de objetos
-        const tope = 5;
-        const productostop = array.slice(0, tope);
-//fin del filtro
 
-//se usa productostop porque es la variable que trae el arreglo y contiene un limite de 5 productos
-    productostop.forEach(function (objeto) {
 
-        var productCardCarousel = document.createElement("div");
-        productCardCarousel.classList = "item";
+  
+  catalogoMasVendidos.forEach(function (objeto) {
 
-        productCardCarousel.innerHTML = `
-        <div class="card" id="imageButton">
-            <img src="${objeto.img}"
-            alt="Producto" class="card-img-top">
-        </div>
-`;
-        divCarousel.appendChild(productCardCarousel);
-    });
-    });
-//fin de la conexion con la promesa
+      var productCardCarousel = document.createElement("div");
+      productCardCarousel.classList = "item";
+
+      productCardCarousel.innerHTML = `
+      <div class="card" id="">
+        <img src="${objeto.img}" alt="Tapete geométrico naranja 1.20 2" class="card-img-top">
+      </div>`;
+      console.log(productCardCarousel);
+      divCarousel.appendChild(productCardCarousel);
+  });
+  
 }
 
-
 addProductoCarousel();
-
 //Finaliza lo referente a pintar el carousel del html
 
 //Inicia jQuery carousel
