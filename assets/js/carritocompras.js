@@ -194,7 +194,7 @@ function addMyBagContent460() {
         </div>
       </div>
       <div id="crossButton" class="col-auto">
-        <button id="cross-icon-button460${indice}" class = "cross-icon-buttons" type="button">
+        <button onclick="iconoBolsaEliminar()" id="cross-icon-button460${indice}" class = "cross-icon-buttons" type="button">
           <i id="cross-icon" class="fi fi-sr-cross"></i>
         </button>
       </div>
@@ -285,7 +285,7 @@ function addMyBagContentMobile() {
             alt="...">
         </div>
         <div id="crossButton" class="col-auto">
-          <button id="cross-icon-buttonMobile${indice}" class = "cross-icon-buttons" type="button">
+          <button onclick="iconoBolsaEliminar()" id="cross-icon-buttonMobile${indice}" class = "cross-icon-buttons" type="button">
             <i id="cross-icon" class="fi fi-sr-cross"></i>
           </button>
         </div>
