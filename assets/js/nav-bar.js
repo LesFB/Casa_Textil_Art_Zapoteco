@@ -136,6 +136,7 @@ function iconoBolsa(){
     let carrito= JSON.parse(localStorage.getItem("CartShopping"));
     var carritoActivo = document.getElementById("active-car");
     var carritoInactivo = document.getElementById("inactive-car");
+    
 
     if (carrito === null || carrito.length === 0){
 
@@ -152,12 +153,18 @@ document.addEventListener('DOMContentLoaded', function() {
     iconoBolsa();
   });
 
-function iconoBolsaAnadir(){
+function iconoBolsaAnadir(indice){
     var carritoActivo=document.getElementById("active-car");
     var carritoInactivo=document.getElementById("inactive-car");
+    var letreroAnadir= document.getElementById(`letrero${indice}`)
 
     carritoActivo.style.display = "inline"; // Mostrar el icono activo
     carritoInactivo.style.display = "none";
+    letreroAnadir.classList.remove("d-none");
+    letreroAnadir.style.marginLeft = "10%";
+    letreroAnadir.style.marginTop ="10%";
+
+    
 }
 
 function iconoBolsaEliminar(){
