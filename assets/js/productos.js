@@ -144,7 +144,8 @@ function addProducto(filtro,arregloProductos) {
             
                                                      <div class="container-fluid " id="button_content_modal">
                                                     
-                                                     <button  onclick="iconoBolsaAnadir()" id="addCart${indice}" class = "addCartButtons"> Añadir al carrito</button>
+                                                     <button  onclick="iconoBolsaAnadir(${indice})" id="addCart${indice}" class = "addCartButtons"> Añadir al carrito</button>
+                                                     <div class="letrero d-none" id="letrero${indice}">Producto Añadido</div>
                                             
                                            
                                                 

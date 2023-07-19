@@ -55,7 +55,19 @@ ShowHideMobile();
 
 window.addEventListener("load", checkScreenWidth);//Finalmente llamamos la funcion checkScreenWidth cuando cargue la pagina 
 
+function removeDuplicateProducts() {
+  const uniqueProducts = [];
+  const productIds = new Set();
 
+  for (const objeto of cartShopping) {
+    if (!productIds.has(objeto.id)) {
+      productIds.add(objeto.id);
+      uniqueProducts.push(objeto);
+    }
+  }
+
+  return uniqueProducts;
+}
 
 
 // INICIA EL PINTADO
@@ -66,10 +78,11 @@ const divMyBagContent580 = document.querySelector("#myBagContent580");
 function addMyBagContent580() {
   
   var myBagContent
+  var uniqueProducts = removeDuplicateProducts();
 
-    cartShopping.forEach(function (objeto, indice) {
+    uniqueProducts.forEach(function (objeto, indice) {
    
-
+      
       myBagContent = document.createElement("div");
       myBagContent.classList = " card mb-3 col-auto";
 
@@ -93,11 +106,7 @@ function addMyBagContent580() {
     </div>
     <div class="col-auto" id="productQuantity">
               <div> Cantidad</div>
-              <select id="productQuantitySelect" class="form-select" aria-label="Default select example">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
+              ${pintarNumeroProductos(prod,objeto.id)}
             </div>
             <div class="col-auto" id="productPrice">
               <div> $${objeto.precio} MXN</div>
@@ -391,4 +400,21 @@ function actualizarIconoBolsa(){
 }
 
 
+function contadorProductos(){
+  let cartShopping = JSON.parse(localStorage.getItem("CartShopping"))
+  let idCounter = {}; 
+  for (i =0;i<cartShopping.length;i++){
+    var producto = cartShopping[i].id;
+    idCounter[producto] = (idCounter[producto] || 0) + 1;
+  }
+  return idCounter;
+}
 
+let prod = contadorProductos();
+
+function pintarNumeroProductos(objeto,idEspecifico){
+  
+  let repeticionesID = objeto[idEspecifico] || 0;
+  return repeticionesID;
+}
+pintarNumeroProductos(prod,"prod-coj-02");
