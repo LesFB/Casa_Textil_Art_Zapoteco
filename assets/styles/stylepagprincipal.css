@@ -92,32 +92,6 @@
         margin-top: 30%;
     }
 
-    #cojines {
-        margin-left: 20px;
-        font-size: 300%;
-        font-family: 'Raleway', sans-serif;
-        font-style: bold;
-        padding-top: 10%;
-    }
-
-    #colchas {
-        margin-left: 37%;
-        font-size: 300%;
-        font-family: 'Raleway', sans-serif;
-        font-style: bold;
-        /*padding-top: 10%;*/
-        margin-top: -65px;
-        text-align: center;
-    }
-
-    #tapetes {
-        margin-left: 15px;
-        font-size: 300%;
-        font-family: 'Raleway', sans-serif;
-        font-style: bold;
-        padding-top: 10%;
-    }
-
     .topVentas {
         margin-top: 100px;
         margin-bottom: 100px;
@@ -135,8 +109,39 @@
         padding-top: 10%;
         padding-bottom: 10%;
         margin-left: 5%;
+    }
 
+    #cojines {
+        margin-left: 15%;
+        font-size: 300%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: -20%;
+    }
 
+    #colchas {
+        margin-left: 37%;
+        font-size: 300%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: -70%;
+        text-align: center;
+    }
+
+    #tapetes {
+        margin-left: 12%;
+        font-size: 300%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: -20%;
+    }
+
+    #manteles {
+        margin-left: 3%;
+        font-size: 300%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: -20%;;
     }
 }
 
@@ -152,28 +157,38 @@
     }
 
     #cojines {
-        margin-left: 8px;
-        font-size: 300%;
+        margin-left: 10%;
+        font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 2%;
     }
 
     #colchas {
         margin-left: 25%;
-        font-size: 300%;
+        font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: -40%;
+        text-align: center;
     }
 
     #tapetes {
-        margin-left: 6px;
-        font-size: 300%;
+        margin-left: 7%;
+        font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 2%;
     }
+
+    #manteles {
+        margin-left: -2%;
+        font-size: 250%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: 2%;;
+    }
+
 }
 
 
@@ -267,11 +282,11 @@
     }
 
     #cojines {
-        margin-left: 18px;
+        margin-left: 20%;
         font-size: 300%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: -20%;
     }
 
     #colchas {
@@ -280,16 +295,24 @@
         font-family: 'Raleway', sans-serif;
         font-style: bold;
         padding-top: 1%;
-        margin-top: -50%;
+        margin-top: -75%;
         text-align: center;
     }
 
     #tapetes {
-        margin-left: 18px;
+        margin-left: 10%;
         font-size: 300%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: -20%;
+    }
+
+    #manteles {
+        margin-left: 2%;
+        font-size: 300%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: -20%;
     }
 
     .topVentas {
@@ -385,16 +408,16 @@
     }
 
     #cojines {
-        margin-left: 18px;
-        font-size: 300%;
+        margin-left: 15%;
+        font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 0;
     }
 
     #colchas {
         margin-left: 40px;
-        font-size: 300%;
+        font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
         padding-top: 10%;
@@ -404,38 +427,52 @@
 
     #tapetes {
         margin-left: 14px;
-        font-size: 300%;
+        font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 0;
     }
 
+    #manteles {
+        margin-left: 5%;
+        font-size: 250%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: 0;
+    }
 
 }
 
-@media (max-width:535px) {
+@media (max-width:534px) {
     #cojines {
-        margin-left: 24px;
+        margin-left: 15%;
         font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 0%;
     }
 
     #colchas {
-        margin-left: 18px;
+        margin-left: 30%;
         font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: -45%;
     }
 
     #tapetes {
-        margin-left: 20px;
+        margin-left: 10%;
         font-size: 250%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 0%;
+    }
+    #manteles{
+        margin-left: 0;
+        font-size: 250%;
+        font-family: 'Raleway', sans-serif;
+        font-style: bold;
+        margin-top: 0%;
     }
 
     .titulo-cat {
@@ -450,41 +487,38 @@
 
 }
 
-@media (max-width:490px) {
+@media (max-width:500px) {
     #cojines {
-        margin-left: 24px;
+        margin-left: 10%;
         font-size: 200%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 20%;
     }
 
     #colchas {
-        margin-left: 35px;
+        margin-left: 0%;
         font-size: 200%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
-        margin-top: -25px;
+        margin-top: 5%;
     }
 
     #tapetes {
-        margin-left: 20px;
+        margin-left: 10%;
         font-size: 200%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
+        margin-top: 20%;
         text-align: center;
     }
 
-    .titulo-cat {
+    #manteles{
+        margin-left: -2%;
         font-size: 200%;
         font-family: 'Raleway', sans-serif;
         font-style: bold;
-        padding-top: 10%;
-        padding-bottom: 10%;
-        margin-left: 10px;
-
+        margin-top: 20%;
     }
 
 }

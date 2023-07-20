@@ -115,20 +115,20 @@
 
 .invalid-login{
     display: none;
-    position: absolute; 
-    right: 125px; 
+    position: absolute;  
     color: beige; 
     font-size: 25px; 
-    top: 85px;
+    width:100%;
+    margin: 0 auto; 
 }
 
 .invalid-login-active{
     display: block;
     position: absolute; 
-    right: 125px; 
     color: beige; 
     font-size: 25px; 
-    top: 85px;
+    width:100%;
+    margin: 10px auto; 
 }
 
 /*Esta media query es para pantalla de tablet*/
@@ -178,10 +178,10 @@
 
     .invalid-login{
         position: absolute; 
-        right: 23px; 
+        margin: 10px auto; 
         color: beige; 
         font-size: 18px; 
-        top: 85px;
+        width:100%
     }
     .registro{
         font-size: 18px; 
@@ -190,7 +190,7 @@
 }
 
 /* Media query para celular */
-@media (max-width: 767.98px) {
+@media (min-width: 445px) and (max-width: 767.98px) {
     .contenido {
         background-image: url('../img/login.PNG'); /* Ruta de la imagen de fondo para dispositivos móviles */
         background-repeat: no-repeat;
@@ -201,7 +201,7 @@
       }
 
       .tituloLogin {
-        padding-top: 20px;
+        padding-top: 25px;
         font-family: 'Raleway', sans-serif;
         font-style: normal;
         font-weight: 700;
@@ -274,10 +274,10 @@
 
     .invalid-login{
         position: absolute; 
-        right: 0px; 
         color: beige; 
-        font-size: 15px; 
-        top: 85px;
+        font-size: 14px; 
+        width:100%;
+        margin: 10px auto;
     }
     .registro{
         font-size: 16px; 
@@ -285,3 +285,81 @@
 
 }
 
+@media (max-width: 445px) {
+    .contenido {
+        background-image: url('../img/login.PNG'); /* Ruta de la imagen de fondo para dispositivos móviles */
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: -16px !important;
+        height: 600px;
+        justify-content: center;
+      }
+
+    .tituloLogin {
+        padding-top: 20px;
+        font-family: 'Raleway', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: center;
+        color: black;
+    }
+
+    #floatingInput {
+        font-family: 'Figtree', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    #floatingPassword {
+        font-family: 'Figtree', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    .form-floating{
+        margin-bottom: 15%;
+    }
+
+    .label {
+        font-family: 'Figtree', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    #boton {
+        box-sizing: border-box;
+        position: relative;
+        height: 42px;
+        width: 138px;
+        margin-top: 23%;
+        margin-bottom: 20%;
+        font-family: 'Figtree', sans-serif;
+        font-size: 16px;
+        background: #78C0A8;
+        border: 1px solid #78C0A8;
+        border-radius: 10px;
+    }
+
+    .registro{
+        font-family: 'Figtree', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .invalid-login{
+        position: absolute; 
+        color: beige; 
+        font-size: 12px; 
+        width:100%;
+        margin: 10px auto;
+    }
+    .registro{
+        font-size: 14px; 
+    }
+}
