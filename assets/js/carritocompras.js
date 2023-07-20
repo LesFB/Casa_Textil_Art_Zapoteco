@@ -6,6 +6,7 @@ const containerMyBagOrderMobileSH = document.getElementById("containerMyBagOrder
 const quantitySubtotalProduct580 = document.querySelector("#quantitySubtotal580");
 const quantitySubtotalProduct460 = document.querySelector("#quantitySubtotal460");
 const quantitySubtotalProductMobile = document.getElementById("quantitySubtotalMobile");
+const subtotalProduct580 = document.querySelector("#subtotal580");
 console.log(quantitySubtotalProductMobile);
 
 
@@ -14,6 +15,7 @@ console.log(quantitySubtotalProductMobile);
 function ShowHideDesktop() {
   if (window.innerWidth > 866) {
     containerMyBagOrder580SH.style.display = 'flex';
+    
   } else {
 
     containerMyBagOrder580SH.style.display = 'none';
@@ -26,6 +28,7 @@ function ShowHideTablet() {
 
   if (window.innerWidth > 461 && window.innerWidth <= 866) {
     containerMyBagOrder460SH.style.display = 'flex';
+   
   } else {
     containerMyBagOrder460SH.style.display = 'none';
   }
@@ -35,6 +38,7 @@ function ShowHideTablet() {
 function ShowHideMobile() {
   if (window.innerWidth <= 460) {
     containerMyBagOrderMobileSH.style.display = 'flex';
+   
   } else {
     containerMyBagOrderMobileSH.style.display = 'none';
   }
@@ -138,6 +142,7 @@ function addMyBagContent580() {
       quantitySubtotalProduct580.innerHTML = `$${subtotalProducts} MXN`;
       localStorage.setItem("CartShopping", JSON.stringify(cartShopping));
       console.log("Despues set local storage", cartShopping)
+      window.location.reload()
       
 
 
@@ -153,7 +158,17 @@ function addMyBagContent580() {
     //Price in the modal
     const subtotalProducts = cartShopping.reduce((acc, producto) => acc + producto.precio, 0);
     
-    quantitySubtotalProduct580.innerHTML = `$${subtotalProducts} MXN`;
+    if (cartShopping != null && cartShopping != 0){
+      quantitySubtotalProduct580.innerHTML = `$${subtotalProducts} MXN`;
+      subtotalProduct580.innerHTML = `Subtotal`;
+    
+
+    }else{
+      quantitySubtotalProduct580.innerHTML = `No hay productos en tu bolsa`;
+      
+    }
+
+    
     
   
     
@@ -240,6 +255,7 @@ function addMyBagContent460() {
         const subtotalProducts = cartShopping.reduce((acc, producto) => acc + producto.precio, 0);
         quantitySubtotalProduct460.innerHTML = `$${subtotalProducts} MXN`;
         localStorage.setItem("CartShopping", JSON.stringify(cartShopping));
+        window.location.reload()
   
   
   
@@ -347,9 +363,7 @@ function addMyBagContentMobile() {
         const subtotalProducts = cartShopping.reduce((acc, producto) => acc + producto.precio, 0);
         quantitySubtotalProductMobile.innerHTML = `$${subtotalProducts} MXN`;
         localStorage.setItem("CartShopping", JSON.stringify(cartShopping));
-  
-  
-  
+        window.location.reload()
   
         });
   
