@@ -181,3 +181,16 @@ function iconoBolsaEliminar(){
     
     
 }
+
+const lengEngl = document.querySelector("#engl-lang");
+const lengEsp = document.querySelector("#esp-lang");
+
+lengEsp.addEventListener("click", () => {
+    location.reload();
+});
+
+lengEngl.addEventListener("click", () => {
+    Weglot.initialize({
+        api_key: 'wg_18ede4bdd6931f8aa5c73f8cee27a1a62'
+    });
+});
