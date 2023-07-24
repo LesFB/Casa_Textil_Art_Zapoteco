@@ -6,6 +6,7 @@ const containerMyBagOrderMobileSH = document.getElementById("containerMyBagOrder
 const quantitySubtotalProduct580 = document.querySelector("#quantitySubtotal580");
 const quantitySubtotalProduct460 = document.querySelector("#quantitySubtotal460");
 const quantitySubtotalProductMobile = document.getElementById("quantitySubtotalMobile");
+const subtotalProduct580 = document.querySelector("#subtotal580");
 console.log(quantitySubtotalProductMobile);
 
 
@@ -14,6 +15,7 @@ console.log(quantitySubtotalProductMobile);
 function ShowHideDesktop() {
   if (window.innerWidth > 866) {
     containerMyBagOrder580SH.style.display = 'flex';
+    
   } else {
 
     containerMyBagOrder580SH.style.display = 'none';
@@ -26,6 +28,7 @@ function ShowHideTablet() {
 
   if (window.innerWidth > 461 && window.innerWidth <= 866) {
     containerMyBagOrder460SH.style.display = 'flex';
+   
   } else {
     containerMyBagOrder460SH.style.display = 'none';
   }
@@ -35,6 +38,7 @@ function ShowHideTablet() {
 function ShowHideMobile() {
   if (window.innerWidth <= 460) {
     containerMyBagOrderMobileSH.style.display = 'flex';
+   
   } else {
     containerMyBagOrderMobileSH.style.display = 'none';
   }
@@ -55,7 +59,19 @@ ShowHideMobile();
 
 window.addEventListener("load", checkScreenWidth);//Finalmente llamamos la funcion checkScreenWidth cuando cargue la pagina 
 
+function removeDuplicateProducts() {
+  const uniqueProducts = [];
+  const productIds = new Set();
 
+  for (const objeto of cartShopping) {
+    if (!productIds.has(objeto.id)) {
+      productIds.add(objeto.id);
+      uniqueProducts.push(objeto);
+    }
+  }
+
+  return uniqueProducts;
+}
 
 
 // INICIA EL PINTADO
@@ -66,10 +82,11 @@ const divMyBagContent580 = document.querySelector("#myBagContent580");
 function addMyBagContent580() {
   
   var myBagContent
+  var uniqueProducts = removeDuplicateProducts();
 
-    cartShopping.forEach(function (objeto, indice) {
+    uniqueProducts.forEach(function (objeto, indice) {
    
-
+      
       myBagContent = document.createElement("div");
       myBagContent.classList = " card mb-3 col-auto";
 
@@ -93,17 +110,13 @@ function addMyBagContent580() {
     </div>
     <div class="col-auto" id="productQuantity">
               <div> Cantidad</div>
-              <select id="productQuantitySelect" class="form-select" aria-label="Default select example">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
+              ${pintarNumeroProductos(prod,objeto.id)}
             </div>
             <div class="col-auto" id="productPrice">
               <div> $${objeto.precio} MXN</div>
             </div>
             <div id="crossButton" class="col-auto">
-              <button id="cross-icon-button580${indice}" class = "cross-icon-buttons" type="button">
+              <button onclick="iconoBolsaEliminar()" id="cross-icon-button580${indice}" class = "cross-icon-buttons" type="button">
                 <i id="cross-icon" class="fi fi-sr-cross"></i>
               </button>
             </div>
@@ -129,6 +142,7 @@ function addMyBagContent580() {
       quantitySubtotalProduct580.innerHTML = `$${subtotalProducts} MXN`;
       localStorage.setItem("CartShopping", JSON.stringify(cartShopping));
       console.log("Despues set local storage", cartShopping)
+      window.location.reload()
       
 
 
@@ -144,7 +158,17 @@ function addMyBagContent580() {
     //Price in the modal
     const subtotalProducts = cartShopping.reduce((acc, producto) => acc + producto.precio, 0);
     
-    quantitySubtotalProduct580.innerHTML = `$${subtotalProducts} MXN`;
+    if (cartShopping != null && cartShopping != 0){
+      quantitySubtotalProduct580.innerHTML = `$${subtotalProducts} MXN`;
+      subtotalProduct580.innerHTML = `Subtotal`;
+    
+
+    }else{
+      quantitySubtotalProduct580.innerHTML = `No hay productos en tu bolsa`;
+      
+    }
+
+    
     
   
     
@@ -194,7 +218,7 @@ function addMyBagContent460() {
         </div>
       </div>
       <div id="crossButton" class="col-auto">
-        <button id="cross-icon-button460${indice}" class = "cross-icon-buttons" type="button">
+        <button onclick="iconoBolsaEliminar()" id="cross-icon-button460${indice}" class = "cross-icon-buttons" type="button">
           <i id="cross-icon" class="fi fi-sr-cross"></i>
         </button>
       </div>
@@ -231,6 +255,7 @@ function addMyBagContent460() {
         const subtotalProducts = cartShopping.reduce((acc, producto) => acc + producto.precio, 0);
         quantitySubtotalProduct460.innerHTML = `$${subtotalProducts} MXN`;
         localStorage.setItem("CartShopping", JSON.stringify(cartShopping));
+        window.location.reload()
   
   
   
@@ -285,7 +310,7 @@ function addMyBagContentMobile() {
             alt="...">
         </div>
         <div id="crossButton" class="col-auto">
-          <button id="cross-icon-buttonMobile${indice}" class = "cross-icon-buttons" type="button">
+          <button onclick="iconoBolsaEliminar()" id="cross-icon-buttonMobile${indice}" class = "cross-icon-buttons" type="button">
             <i id="cross-icon" class="fi fi-sr-cross"></i>
           </button>
         </div>
@@ -338,9 +363,7 @@ function addMyBagContentMobile() {
         const subtotalProducts = cartShopping.reduce((acc, producto) => acc + producto.precio, 0);
         quantitySubtotalProductMobile.innerHTML = `$${subtotalProducts} MXN`;
         localStorage.setItem("CartShopping", JSON.stringify(cartShopping));
-  
-  
-  
+        window.location.reload()
   
         });
   
@@ -376,7 +399,36 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 })
 
+function actualizarIconoBolsa(){
+  let carrito1= JSON.parse(localStorage.getItem("CartShopping"));
+    var carritoActivo = document.getElementById("active-car");
+    var carritoInactivo = document.getElementById("inactive-car");
+
+    if (carrito1.length==0){
+        carritoActivo.classList.add("d-none");
+        carritoInactivo.classList.remove("d-none");
+    }else{
+        carritoActivo.classList.remove("d-none");
+        carritoInactivo.classList.add("d-none");
+    }   
+}
 
 
+function contadorProductos(){
+  let cartShopping = JSON.parse(localStorage.getItem("CartShopping"))
+  let idCounter = {}; 
+  for (i =0;i<cartShopping.length;i++){
+    var producto = cartShopping[i].id;
+    idCounter[producto] = (idCounter[producto] || 0) + 1;
+  }
+  return idCounter;
+}
 
+let prod = contadorProductos();
 
+function pintarNumeroProductos(objeto,idEspecifico){
+  
+  let repeticionesID = objeto[idEspecifico] || 0;
+  return repeticionesID;
+}
+pintarNumeroProductos(prod,"prod-coj-02");

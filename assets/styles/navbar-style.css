@@ -679,3 +679,8 @@
         padding-right: 0px !important;
     }
 }
+
+#active-car,
+#inactive-car {
+  display: none;
+}
